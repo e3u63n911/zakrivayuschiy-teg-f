@@ -12,3 +12,127 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+.sparks {
+    opacity: 0;
+}
+
+.theme-menu__button:disabled::before {
+    content: "▶";
+    position: absolute;
+    animation: arrow 0.5s ease-in-out infinite alternate;
+    inset-inline-start: -20px;
+  }
+
+  
+@keyframes arrow {
+    from {
+      transform: translate(0);
+    }
+    to {
+      transform: translate(4px);
+    }
+  }
+
+  .theme-menu__button:disabled {
+    opacity: 0.6;
+    cursor: default;
+    pointer-events: none;
+  }
+  
+  .like-icon.is-liked .sparks {
+    animation: sparks-animation 0.3s ease-in 0.3s 1 alternate;
+  }
+
+  @keyframes sparks-animation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .like-icon.is-liked .heart {
+    animation: scale-animation 0.3s ease-in 0.1s 1 alternate;
+  }
+
+  @keyframes scale-animation {
+    from {
+      scale: 1;
+    }
+    to {
+      scale: 1.5;
+    }
+  }
+
+  .theme-menu__button::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-color);
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+  }
+
+  .like-icon .heart {
+    transition: fill 0.1s;
+    transform-origin: center center;
+  }
+  
+  .like-icon .contour {
+    fill: var(--main-color-text);
+    transition: fill 0.3s linear;
+  }
+  
+  .like-icon .main-body {
+    fill: var(--background-color);
+    transition: fill 0.3s linear;
+  }
+  
+  .like-icon .core {
+    fill: var(--background-color);
+    transition: fill 0.3s 0.05s;
+  }
+  
+  .like-icon .sparks {
+    opacity: 0;
+    fill: var(--color-sparks);
+    transition: fill 0.3s linear;
+  }
+  
+  .like-icon:hover .main-body {
+    fill: var(--main-color-text);
+    transition: fill 0.3s linear;
+  }
+  
+  .like-icon:hover .core {
+    fill: var(--main-color-text);
+    transition: fill 0.3s linear;
+  }
+  
+  .like-icon:active .main-body {
+    fill: var(--color-sparks);
+    transition: fill 0.3s linear;
+  }
+  
+  .like-icon:active .core {
+    fill: var(--color-sparks);
+    transition: fill 0.3s linear;
+  }
+  
+  .like-icon.is-liked .contour {
+    fill: var(--color-sparks);
+    transition: fill 0.3s linear;
+  }
+  
+  .like-icon.is-liked .main-body {
+    fill: var(--color-sparks);
+    transition: fill 0.3s linear;
+  }
+  
+  .like-icon.is-liked .core {
+    fill: var(--color-sparks);
+    transition: fill 0.3s linear;
+  }
+  

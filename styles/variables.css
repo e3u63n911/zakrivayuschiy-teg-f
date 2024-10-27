@@ -1,1 +1,18 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --main-font:Inter;
+    --accent-font:PressStart2P;
+    --main-color-text: #000;
+    --background-color: #FFFFFF;
+    --color-contur-heart:#000000;
+    --color-sparks:#FF0000;
+    --color-fill-heart: none;
+    --background-color-start: #e7e7e7;
+    --background-color-end: #1a1a1a;
+    --title-font-weight: "wght" 700;
+    --text-font-weight: "wght" 400;
+    --mix-blend-color: var(--background-color);
+}
+
+
+
